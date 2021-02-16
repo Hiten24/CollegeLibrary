@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile">
+
+    <!--<ImageView
+        android:id="@+id/imageView8"
+        style="@style/profileInfoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/testings" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        style="@style/profileInfoIcon"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_background"
+        app:srcCompat="@drawable/profileusrnameb" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        style="@style/profileInfoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/profileusremail" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        style="@style/profileInfoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:srcCompat="@drawable/profileusraddress" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        style="@style/profileInfoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@drawable/profileusrclass" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        style="@style/profileInfoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:srcCompat="@drawable/profileusrsapidbw" />
+
+    <TextView
+        android:id="@+id/profile_user_info_name"
+        style="@style/profileInfoUserDetails"
+        android:text="Hiten Chawda"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_name"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_sapid"
+        style="@style/profileInfoUserDetails"
+        android:text="53003180014"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_sapid"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_sapid"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_mobno"
+        style="@style/profileInfoUserDetails"
+        android:text="+918080321784"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_mobno"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_mobno"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_email"
+        style="@style/profileInfoUserDetails"
+        android:text="hiten2406@gmail.com"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_email"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_email"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_class"
+        style="@style/profileInfoUserDetails"
+        android:text="TY BSC IT"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_class"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_class"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_address"
+        style="@style/profileInfoUserDetails"
+        android:text="Mumbai"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_title_address"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_title_address"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_info_div"
+        style="@style/profileInfoUserDetails"
+        android:layout_marginStart="12dp"
+        android:text="A"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_user_info_class"
+        app:layout_constraintStart_toEndOf="@+id/profile_user_info_class"
+        app:layout_constraintTop_toTopOf="@+id/profile_user_info_class"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profile_user_title_name"
+        style="@style/profileInfoTitle"
+        android:layout_marginStart="10dp"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+    <TextView
+        android:id="@+id/profile_user_title_sapid"
+        style="@style/profileInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Sap ID"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+    <TextView
+        android:id="@+id/profile_user_title_mobno"
+        style="@style/profileInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Mobile No"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/profile_user_title_email"
+        style="@style/profileInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Email"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+    <TextView
+        android:id="@+id/profile_user_title_class"
+        style="@style/profileInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Class"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+    <TextView
+        android:id="@+id/profile_user_title_address"
+        style="@style/profileInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Address"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />-->
+
+    <View
+        android:id="@+id/profile_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.25"/>
+    <!--<LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/profile_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1">-->
+
+    <TextView
+        android:id="@+id/ProfileUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Hiten Chawda"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_background" />
+
+    <TextView
+        android:id="@+id/ProfileUsersap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="53003180014"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_background"
+        app:layout_constraintEnd_toEndOf="@+id/ProfileUserName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ProfileUserName"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileUserName"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_background"
+        tools:layout_editor_absoluteX="20dp"
+        >
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/username_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/profileusrnameb" />
+
+            <TextView
+                android:id="@+id/username"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/username_icon"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/username_info"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/username_icon"
+                android:text="Hiten Chawda" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/id_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/profileusrsapidbw" />
+
+            <TextView
+                android:id="@+id/sapid_title"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/id_icon"
+                android:text="Sap ID" />
+
+            <TextView
+                android:id="@+id/sapid_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/id_icon"
+                android:text="53003180014" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/mobileno_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/testings" />
+
+            <TextView
+                android:id="@+id/mobileno_title"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/mobileno_icon"
+                android:text="Mobile No" />
+
+            <TextView
+                android:id="@+id/mobileno_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/mobileno_icon"
+                android:text="+918080321784" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/email_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/profileusremail" />
+
+            <TextView
+                android:id="@+id/email_title"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/email_icon"
+                android:text="Email" />
+
+            <TextView
+                android:id="@+id/email_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/email_icon"
+                android:text="hiten2406@gmail.com" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/class_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/profileusrclass" />
+
+            <TextView
+                android:id="@+id/calss_title"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/class_icon"
+                android:text="Class" />
+
+            <TextView
+                android:id="@+id/class_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/class_icon"
+                android:text="TY BSC IT" />
+
+            <TextView
+                android:id="@+id/div_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/class_value"
+                android:text="A" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/profileDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/location_icon"
+                style="@style/profileInfoIcon"
+                app:srcCompat="@drawable/profileusraddress" />
+
+            <TextView
+                android:id="@+id/address_title"
+                style="@style/profileInfoTitle"
+                android:layout_toRightOf="@+id/location_icon"
+                android:text="Address" />
+
+            <TextView
+                android:id="@+id/address_value"
+                style="@style/profileInfoUserDetails"
+                android:layout_toRightOf="@+id/location_icon"
+                android:text="Mumbai" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/change_password_btn"
+            style="@style/button"
+            android:layout_marginTop="20dp"
+            android:layout_height="60dp"
+            android:text="change password"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

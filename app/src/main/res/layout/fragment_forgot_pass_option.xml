@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/forgerPassSelectionTitle"
+        style="@style/titlestyle"
+        android:layout_marginTop="68dp"
+        android:text="Select Option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/descriptionStyle"
+        android:text="Select Which contact detail should\nwe use to reset your password?"
+        app:layout_constraintStart_toStartOf="@+id/forgerPassSelectionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/forgerPassSelectionTitle" />
+
+    <TextView
+        android:id="@+id/smsLayoutBg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F0EFF4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <ImageView
+        android:id="@+id/sms_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selectoptionsms"
+        app:layout_constraintBottom_toBottomOf="@+id/smsLayoutBg"
+        app:layout_constraintEnd_toEndOf="@+id/smsLayoutBg"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="@+id/smsLayoutBg"
+        app:layout_constraintTop_toTopOf="@+id/smsLayoutBg" />
+
+    <!--<RelativeLayout
+        android:id="@+id/smsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F0EFF4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.194">
+
+        <TextView
+            android:id="@+id/smsLayoutBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/sms_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/selectoptionsms" />
+
+        <TextView
+            android:id="@+id/sms_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_toRightOf="@+id/sms_icon"
+            android:fontFamily="@font/muli"
+            android:text="via sms:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/sms_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sms_title"
+            android:layout_toRightOf="@+id/sms_icon"
+            android:fontFamily="@font/muli"
+            android:text="+918238761977"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </RelativeLayout>-->
+
+    <TextView
+        android:id="@+id/sms_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_toRightOf="@+id/sms_icon"
+        android:fontFamily="@font/muli"
+        android:text="via sms:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/smsLayoutBg"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toEndOf="@+id/sms_icon"
+        app:layout_constraintTop_toTopOf="@+id/smsLayoutBg" />
+
+    <TextView
+        android:id="@+id/sms_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sms_title"
+        android:layout_marginStart="16dp"
+        android:layout_toRightOf="@+id/sms_icon"
+        android:fontFamily="@font/muli"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/smsLayoutBg"
+        app:layout_constraintEnd_toEndOf="@+id/smsLayoutBg"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toEndOf="@+id/sms_icon"
+        app:layout_constraintTop_toBottomOf="@+id/sms_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
+        android:id="@+id/mailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F0EFF4"
+        android:onClick="gotoMailVerify"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smsLayoutBg"
+        app:layout_constraintVertical_bias="0.108">
+
+        <ImageView
+            android:id="@+id/mail_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="20dp"
+            android:onClick="gotoMailVerify"
+            android:src="@drawable/selectoptionmail" />
+
+        <TextView
+            android:id="@+id/mail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_toRightOf="@+id/mail_icon"
+            android:fontFamily="@font/muli"
+            android:text="via mail:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/mail_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mail_title"
+            android:layout_toRightOf="@+id/mail_icon"
+            android:fontFamily="@font/muli"
+            android:text="example12@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/didntGetOTP1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:text="Didn't receive the OTP?"
+        android:textColor="#323131"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpEditText" />
+
+    <TextView
+        android:id="@+id/didntGetOTP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="sans-serif"
+        android:text="Resend OTP"
+        android:textColor="#AE0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toEndOf="@+id/didntGetOTP1"
+        app:layout_constraintTop_toBottomOf="@+id/otpEditText"
+        tools:ignore="MissingConstraints" />
+
+    <!--    <com.chaos.view.PinView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:itemCount="4"-->
+    <!--        app:itemWidth="50dp"-->
+    <!--       />-->
+    <!--    <com.chaos.view.PinView-->
+    <!--        android:id="@+id/pinView"-->
+    <!--        style="@style/PinWidget.PinView"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:inputType="number"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:itemCount="4"-->
+    <!--        app:itemHeight="48dp"-->
+    <!--        app:itemRadius="10dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:lineColor="@android:color/darker_gray"-->
+    <!--        app:viewType="rectangle" />-->
+
+    <!--<LinearLayout
+        android:id="@+id/otpView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verification_discription3"
+        app:layout_constraintVertical_bias="0.067"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/inputcode1"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputcode2"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputcode3"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputcode4"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputcode5"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputcode6"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/verification_discription3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/purple_700"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toEndOf="@+id/verification_discription2"
+        app:layout_constraintTop_toBottomOf="@+id/verification_discription" />
+
+    <EditText
+        android:id="@+id/otpEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:fontFamily="@font/muli_black"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="#474af1"
+        android:textSize="36sp"
+        android:maxLength="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verification_discription3"
+        app:layout_constraintVertical_bias="0.196" />
+
+    <Button
+        style="@style/button"
+        android:id="@+id/verifyBtn"
+        android:onClick="gotoNewPass"
+        android:text="Verify"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/didntGetOTP1"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/verifyicon" />
+
+    <TextView
+        android:id="@+id/verification_title"
+        style="@style/titlestyle"
+        android:layout_marginLeft="16dp"
+        android:text="Verification\ncode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/verification_discription"
+        style="@style/descriptionStyle"
+        android:layout_marginTop="8dp"
+        android:text="Enter the OTP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/verification_title"
+        app:layout_constraintTop_toBottomOf="@+id/verification_title" />
+
+    <TextView
+        android:id="@+id/verification_discription2"
+        style="@style/descriptionStyle"
+        android:layout_marginTop="8dp"
+        android:text="sent to"
+        app:layout_constraintStart_toStartOf="@+id/verification_discription"
+        app:layout_constraintTop_toBottomOf="@+id/verification_discription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

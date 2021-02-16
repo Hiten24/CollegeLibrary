@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/forget_pass_sapid"
+        style="@style/editTextLayout"
+        android:layout_marginTop="40dp"
+        android:hint="Sap Id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassHint2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/editTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
+            android:inputType="number"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/forgotUsrinfoBtn"
+        style="@style/button"
+        android:onClick="gotoForgetPassOption"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forget_pass_sapid"
+        app:layout_constraintVertical_bias="0.949" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/forgotpassicon" />
+
+    <TextView
+        android:id="@+id/forgetPassHint1"
+        style="@style/descriptionStyle"
+        android:text="Enter Sap id for request to reset your"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/forgetPassTitle"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassTitle" />
+
+    <TextView
+        android:id="@+id/forgetPassHint2"
+        style="@style/descriptionStyle"
+        android:text="password!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/forgetPassHint1"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassHint1" />
+
+    <TextView
+        android:id="@+id/forgetPassTitle"
+        style="@style/titlestyle"
+        android:layout_marginTop="8dp"
+        android:text="Forget\nPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

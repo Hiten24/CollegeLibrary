@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBooks">
+
+    <ImageView
+        android:id="@+id/add_book_icon_vector_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bookvector" />
+
+    <TextView
+        android:id="@+id/chagne_pass_title"
+        style="@style/titlestyle"
+        android:text="add book"
+        app:layout_constraintEnd_toEndOf="@+id/add_book_icon_vector_art"
+        app:layout_constraintStart_toStartOf="@+id/add_book_icon_vector_art"
+        app:layout_constraintTop_toBottomOf="@+id/add_book_icon_vector_art" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/isbn_number_input"
+        style="@style/editTextLayout"
+        android:hint="ISBN Number"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chagne_pass_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/editTextInput"
+            android:maxLength="13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/book_quantity_input"
+        style="@style/editTextLayout"
+        android:layout_marginTop="8dp"
+        android:hint="No Of Books"
+        app:layout_constraintEnd_toEndOf="@+id/isbn_number_input"
+        app:layout_constraintStart_toStartOf="@+id/isbn_number_input"
+        app:layout_constraintTop_toBottomOf="@+id/isbn_number_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/editTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_book_btn"
+        style="@style/button"
+        android:text="Add book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/book_quantity_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/book_quantity_input"
+        app:layout_constraintTop_toBottomOf="@+id/book_quantity_input"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <TextView
+        android:id="@+id/tmptitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/book_quantity_input"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
