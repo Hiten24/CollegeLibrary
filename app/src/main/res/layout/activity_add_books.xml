@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_book_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddBooks">
@@ -18,7 +19,7 @@
         app:srcCompat="@drawable/bookvector" />
 
     <TextView
-        android:id="@+id/chagne_pass_title"
+        android:id="@+id/add_book_book_title"
         style="@style/titlestyle"
         android:text="add book"
         app:layout_constraintEnd_toEndOf="@+id/add_book_icon_vector_art"
@@ -28,23 +29,24 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/isbn_number_input"
         style="@style/editTextLayout"
-        android:hint="ISBN Number"
         android:layout_marginTop="100dp"
+        android:hint="ISBN Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chagne_pass_title">
+        app:layout_constraintTop_toBottomOf="@+id/add_book_book_title">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/isbn_value"
             style="@style/editTextInput"
-            android:maxLength="13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:inputType="number" />
+            android:drawableLeft="@drawable/isbn_input_icon"
+            android:inputType="number"
+            android:maxLength="13" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <!--<com.google.android.material.textfield.TextInputLayout
         android:id="@+id/book_quantity_input"
         style="@style/editTextLayout"
         android:layout_marginTop="8dp"
@@ -59,25 +61,44 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/add_book_btn"
-        style="@style/button"
-        android:text="Add book"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/book_quantity_input"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/book_quantity_input"
-        app:layout_constraintTop_toBottomOf="@+id/book_quantity_input"
-        app:layout_constraintVertical_bias="0.931" />
+    </com.google.android.material.textfield.TextInputLayout>-->
 
     <TextView
-        android:id="@+id/tmptitle"
+        android:id="@+id/scan_barcod_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/book_quantity_input"/>
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Scan Barcode"
+        android:textColor="@color/purple_500"
+        android:textSize="28sp"
+        android:drawableLeft="@drawable/barcode_scanner"
+        android:drawableTint="@color/purple_500"
+        android:paddingLeft="72dp"
+        android:paddingRight="72dp"
+        android:paddingTop="2dp"
+        android:background="@color/lightPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/background_blur"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <include layout="@layout/add_book_info_from_isbn_bottomsheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

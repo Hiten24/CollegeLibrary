@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/fragment_navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_navigation"
     app:startDestination="@id/fragmentLogin">
 
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.example.collegelibrary.FragmentLogin"
+        android:name="com.example.onlinecollegelibrary.FragmentLogin"
         android:label="FragmentLogin" >
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentForgotPassDetail"
             app:destination="@id/fragmentForgotPassDetail" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_emailVerificationWhileSignin"
+            app:destination="@id/emailVerificationWhileSignin" />
     </fragment>
     <fragment
         android:id="@+id/fragmentForgotPassDetail"
-        android:name="com.example.collegelibrary.FragmentForgotPassDetail"
+        android:name="com.example.onlinecollegelibrary.FragmentForgotPassDetail"
         android:label="FragmentForgotPassDetail" >
         <action
             android:id="@+id/action_fragmentForgotPassDetail_to_fragmentForgotPassOption"
@@ -21,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentForgotPassOption"
-        android:name="com.example.collegelibrary.FragmentForgotPassOption"
+        android:name="com.example.onlinecollegelibrary.FragmentForgotPassOption"
         android:label="FragmentForgotPassOption" >
         <action
             android:id="@+id/action_fragmentForgotPassOption_to_fragmentEmailVerificationPage"
@@ -32,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentNewPassword"
-        android:name="com.example.collegelibrary.FragmentNewPassword"
+        android:name="com.example.onlinecollegelibrary.FragmentNewPassword"
         android:label="FragmentNewPassword" >
         <action
             android:id="@+id/action_fragmentNewPassword_to_fragmentPasswordUpdated"
@@ -40,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentPasswordUpdated"
-        android:name="com.example.collegelibrary.FragmentPasswordUpdated"
+        android:name="com.example.onlinecollegelibrary.FragmentPasswordUpdated"
         android:label="FragmentPasswordUpdated" >
         <action
             android:id="@+id/action_fragmentPasswordUpdated_to_fragmentLogin"
@@ -48,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentEmailVerificationPage"
-        android:name="com.example.collegelibrary.FragmentEmailVerificationPage"
+        android:name="com.example.onlinecollegelibrary.FragmentEmailVerificationPage"
         android:label="FragmentEmailVerificationPage" >
         <action
             android:id="@+id/action_fragmentEmailVerificationPage_to_fragmentNewPassword"
@@ -56,10 +61,15 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentForgotPassotpVerification2"
-        android:name="com.example.collegelibrary.FragmentForgotPassotpVerification"
+        android:name="com.example.onlinecollegelibrary.FragmentForgotPassotpVerification"
         android:label="FragmentForgotPassotpVerification" >
         <action
             android:id="@+id/action_fragmentForgotPassotpVerification2_to_fragmentNewPassword"
             app:destination="@id/fragmentNewPassword" />
     </fragment>
+    <fragment
+        android:id="@+id/emailVerificationWhileSignin"
+        android:name="com.example.onlinecollegelibrary.EmailVerificationWhileSignin"
+        android:label="fragment_email_verification_while_signin"
+        tools:layout="@layout/fragment_email_verification_while_signin" />
 </navigation>

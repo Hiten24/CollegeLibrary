@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.collegelibrary">
+    package="com.example.onlinecollegelibrary">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -9,9 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeLibrary">
-        <activity android:name=".ActivityHome"></activity>
-        <activity android:name=".AddBooks"/>
+        <activity android:name=".UserHome"></activity>
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".BarcodeScanner" />
+        <activity android:name=".ActivityHome" />
+        <activity android:name=".AddBooks" />
         <activity android:name=".RegisterForm" />
+        <activity android:name=".UserProfile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +30,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
     </application>
 
 </manifest>

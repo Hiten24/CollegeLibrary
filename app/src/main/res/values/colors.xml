@@ -8,4 +8,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="lightPurple">#d3d0ff</color>
+
+    <color name="lighter_grey">#DDDDDD</color>
+    <color name="colorGray">#808080</color>
+
+    <color name="colorGrayAlpha80">#CC808080</color>
+
+    <color name="bottom_sheet_bg_alpha60">#99000000</color>
+    <color name="bottom_sheet_bg_alpha0">#00000000</color>
+
+    <color name="barcode_field_value">#797979</color>
+
+    <color name="barcode_field_box_stroke">#757575</color>
+
+    <color name="verify">#13ae4b</color>
 </resources>

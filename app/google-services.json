@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "121925248183",
-    "project_id": "collegelibrary-69918",
-    "storage_bucket": "collegelibrary-69918.appspot.com"
+    "project_number": "592090352110",
+    "project_id": "online-college-library-4226a",
+    "storage_bucket": "online-college-library-4226a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:121925248183:android:5d7d093d704d6703411932",
+        "mobilesdk_app_id": "1:592090352110:android:632d0adbfb7904b0f1e6ff",
         "android_client_info": {
-          "package_name": "com.example.collegelibrary"
+          "package_name": "com.example.onlinecollegelibrary"
         }
       },
       "oauth_client": [
         {
-          "client_id": "121925248183-3nccccse4aqrfro416p703p8qigg3lhp.apps.googleusercontent.com",
+          "client_id": "592090352110-67u1qicioa4pho0n3t77kheaknor54js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinecollegelibrary",
+            "certificate_hash": "fcb7fc6070b08f2772a0c9ad44955341e89347db"
+          }
+        },
+        {
+          "client_id": "592090352110-6qe8rc9ij3bsiknl6liiqelnncb58kc8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCX6Fp_aIK1FV0gpewD_H24T0FJbmiQFBY"
+          "current_key": "AIzaSyCZKQDYVqpQ0oyYxOaEcpjPfyArJ4jsX5I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "121925248183-3nccccse4aqrfro416p703p8qigg3lhp.apps.googleusercontent.com",
+              "client_id": "592090352110-6qe8rc9ij3bsiknl6liiqelnncb58kc8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/add_book_bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bottom_sheet_background"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <TextView
+        android:id="@+id/add_book_bottom_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Book Found"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/drag_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bordor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_down" />
+
+    <View
+        android:id="@+id/bottom_bordor"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lighter_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_book_bottom_title" />
+
+    <!--<RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_bordor">-->
+
+        <View
+            android:id="@+id/book_cover_background"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/book_cover_background"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_bordor"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+        <ImageView
+            android:id="@+id/book_cover"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/bookcoverm"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="@+id/book_cover_background"
+            app:layout_constraintBottom_toBottomOf="@+id/book_cover_background"
+            app:layout_constraintLeft_toLeftOf="@+id/book_cover_background"
+            app:layout_constraintRight_toRightOf="@+id/book_cover_background"/>
+
+    <!--    </RelativeLayout>-->
+
+
+    <TextView
+        android:id="@+id/book_title_bs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Hello"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/book_cover_background"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/book_cover_background"
+        app:layout_constraintTop_toTopOf="@+id/book_cover_background"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <LinearLayout
+        android:id="@+id/publisher_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_cover">
+
+        <TextView
+            style="@style/addBookBottomSheetDetails"
+            android:id="@+id/book_publisher_title"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="published by"
+            android:textAllCaps="true"
+            android:textColor="#504E4E"
+            />
+
+        <TextView
+            android:id="@+id/book_publisher_value"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/book_author"
+            android:text="Litwin Books"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_bordor_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/lighter_grey"
+        app:layout_constraintTop_toBottomOf="@id/publisher_layout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_bordor_2"
+        tools:layout_editor_absoluteY="219dp">
+
+        <TextView
+            android:id="@+id/book_author"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="autor"
+            android:textAllCaps="true"
+            android:textColor="#504E4E"
+            />
+
+        <TextView
+            android:id="@+id/book_author_value"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:text="John Miedema"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_bordor_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/lighter_grey"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_bordor_3">
+
+        <TextView
+            android:id="@+id/book_page_number"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="page number"
+            android:textAllCaps="true"
+            android:textColor="#504E4E"
+            />
+
+        <TextView
+            android:id="@+id/book_page_number_value"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:text="92"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_bordor_4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/lighter_grey"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_bordor_4"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/book_subject"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="subject"
+            android:textAllCaps="true"
+            android:textColor="#504E4E"
+            />
+
+        <TextView
+            android:id="@+id/book_subject_value"
+            style="@style/addBookBottomSheetDetails"
+            android:layout_height="wrap_content"
+            android:text="Reading"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_bordor_5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/lighter_grey"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/book_quantity_input"
+        style="@style/editTextLayout"
+        android:layout_marginTop="8dp"
+        android:hint="No Of Books"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_bordor_5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/editTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/quantity_icon"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_book_btn_bottomsheet"
+        style="@style/button"
+        android:text="Add book"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/book_quantity_input"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
