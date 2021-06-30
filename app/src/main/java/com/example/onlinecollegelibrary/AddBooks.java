@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +23,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -39,8 +43,9 @@ public class AddBooks extends AppCompatActivity {
     BottomSheetBehavior bottomSheetBehavior;
     ConstraintLayout constraintLayout;
     View bagroundBlur;
+    ImageView backButton;
 //    TextView bookTitle,bookPublisher,bookAuthor,bookPageNo,bookSubject,scanActivity;
-    TextView scanActivity;
+    TextView scanActivity,addFromExcel;
     ImageView bookCover;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,18 @@ public class AddBooks extends AppCompatActivity {
         isbnValue.addTextChangedListener(textWatcher);
 
         scanActivity = findViewById(R.id.scan_barcod_button);
+        addFromExcel = findViewById(R.id.read_data_from_excel);
+
+        backButton = findViewById(R.id.admin_add_books_back_button);
+
+        addFromExcel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AddBooksFromExcel.class);
+                intent.putExtra("data type","books");
+                startActivity(intent);
+            }
+        });
         scanActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +98,16 @@ public class AddBooks extends AppCompatActivity {
             }
         });
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.tool_bar));
+
     }
 
     private TextWatcher textWatcher = new TextWatcher() {
@@ -93,7 +120,7 @@ public class AddBooks extends AppCompatActivity {
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             if(s.length() == 13){
                 Toast.makeText(getApplicationContext(),"Searching Book...",Toast.LENGTH_SHORT).show();
-                loadData(s.toString());
+                loadData(s.toString(),true,0);
             }
         }
 
@@ -126,14 +153,14 @@ public class AddBooks extends AppCompatActivity {
                 ((startB + (int) (fraction * (endB - startB))));
     }
 
-    public void loadData(String isbnNumber){
+    public void loadData(String isbnNumber,Boolean showBottomSheet,int noOfBooks){
 
         String Url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+isbnNumber+"&jscmd=data&format=json";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                parseJSON(response,isbnNumber);
+                parseJSON(response,isbnNumber,showBottomSheet,noOfBooks);
                 Toast.makeText(getApplicationContext(),"load data",Toast.LENGTH_SHORT).show();
                 Log.d("checking 1","load Data ");
             }
@@ -146,7 +173,7 @@ public class AddBooks extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void parseJSON(String data,String isbnNumber){
+    private void parseJSON(String data,String isbnNumber,Boolean showBottomSheet,int noOfBooks){
         try {
             Toast.makeText(getApplicationContext(),"parse JSON",Toast.LENGTH_SHORT).show();
             Log.d("checking 2","Parse Data ");
@@ -170,8 +197,13 @@ public class AddBooks extends AppCompatActivity {
             JSONObject objCover = book.getJSONObject("cover");
             String bookCover = objCover.getString("medium");
 
-            updateBottomSheet(bookTitle,bookPublisher,bookAuther,bookPages,bookSubject,bookCover,isbnNumber);
-            Toast.makeText(getApplicationContext(),bookTitle,Toast.LENGTH_SHORT).show();
+            if(showBottomSheet){
+                updateBottomSheet(bookTitle,bookPublisher,bookAuther,bookPages,bookSubject,bookCover,isbnNumber);
+                Toast.makeText(getApplicationContext(),bookTitle,Toast.LENGTH_SHORT).show();
+            }else {
+                addBookToDatabase(bookTitle,bookPages,bookAuther,bookPublisher,bookSubject,bookCover,isbnNumber,noOfBooks);
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -203,16 +235,19 @@ public class AddBooks extends AppCompatActivity {
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
         Button addBookToDB = findViewById(R.id.add_book_btn_bottomsheet);
+
+        TextInputLayout bookQuntity = findViewById(R.id.book_quantity_input);
         addBookToDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addBookToDatabase(strTitle,strPages,strAuthor,strPublisher,strSubject,strCover,strISBN);
+                int noOfBooks = Integer.parseInt(bookQuntity.getEditText().getText().toString().trim());
+                addBookToDatabase(strTitle,strPages,strAuthor,strPublisher,strSubject,strCover,strISBN,noOfBooks);
             }
         });
     }
 
-    private void addBookToDatabase(String title,String pages,String auther,String publisher,String subject,String cover,String isbn){
-        Book book = new Book(title,pages,auther,publisher,subject,cover);
+    private void addBookToDatabase(String title,String pages,String auther,String publisher,String subject,String cover,String isbn,int noOfBooks){
+        Book book = new Book(title,pages,auther,publisher,subject,cover,noOfBooks,noOfBooks);
         myRef.child(isbn).setValue(book);
     }
 }

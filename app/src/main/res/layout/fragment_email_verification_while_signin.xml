@@ -10,8 +10,8 @@
         android:id="@+id/email_verifiaction_illustration"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
         android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,10 +21,10 @@
     <TextView
         android:id="@+id/email_verification_title"
         style="@style/titlestyle"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="116dp"
         android:text="Verify your email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_verifiaction_illustration" />
 
@@ -33,21 +33,21 @@
         style="@style/descriptionStyle"
 
         android:layout_marginTop="8dp"
-        android:text="Kindly check your inbox in order to verify the account."
+        android:text="Kindly check your inbox in order to\n verify the account."
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/email_verification_title"
+        app:layout_constraintStart_toStartOf="@+id/email_verification_title"
         app:layout_constraintTop_toBottomOf="@+id/email_verification_title" />
 
     <ImageView
         android:id="@+id/email_verified_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toTopOf="@+id/verification_page_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/email_verifying_description"
         app:srcCompat="@drawable/verifiedcustomlogo" />
 

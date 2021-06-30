@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/arbutus_slab</item>
         <item>@font/muli</item>
         <item>@font/muli_black</item>
+        <item>@font/palanquin_dark_medium</item>
     </array>
 </resources>

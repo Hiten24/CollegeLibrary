@@ -132,7 +132,7 @@ public class FragmentForgotPassOption extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("EmailID", emailId);
                 bundle.putString("SapID", sapID);
-                Navigation.findNavController(v).navigate(R.id.action_fragmentForgotPassOption_to_fragmentEmailVerificationPage, bundle);
+//                Navigation.findNavController(v).navigate(R.id.action_fragmentForgotPassOption_to_fragmentEmailVerificationPage, bundle);
             }
         });
         return view;

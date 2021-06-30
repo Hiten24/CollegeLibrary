@@ -6,6 +6,11 @@ public class User {
 
     }
 
+    public User(String name,String sapId){
+        this.name = name;
+        this.sapId = sapId;
+    }
+
     public User(String name, String email, String sapId, String studentClass, String div, String address, String mobNo, String pass) {
         this.name = name;
         this.email = email;

@@ -162,7 +162,7 @@ public class BarcodeScanner extends AddBooks {
     private void updateBottomSheetDetails(String isbnNumber){
 //        if(barcodeOldData != barcodeData && barcodeData != null)
 //            barcodeDetector.release();
-            loadData(isbnNumber);
+            loadData(isbnNumber,true,0);
          /*   barcodeOldData = barcodeData;
         }*/
 

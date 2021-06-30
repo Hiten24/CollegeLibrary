@@ -89,10 +89,12 @@ public class FragmentForgotPassDetail extends Fragment {
                     myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.child(sapIdStr).exists()){
+                            if(snapshot.child(sapIdStr).exists()){ ;
+                                String phoneNumber = snapshot.child(sapIdStr).getValue(User.class).getMobNo();
                                 Bundle bundle = new Bundle();
                                 bundle.putString("SapID",sapIdStr);
-                                Navigation.findNavController(v).navigate(R.id.action_fragmentForgotPassDetail_to_fragmentForgotPassOption,bundle);
+                                bundle.putString("PhoneNumber", "+91" + phoneNumber);
+                                Navigation.findNavController(v).navigate(R.id.action_fragmentForgotPassDetail_to_fragmentForgotPassotpVerification2,bundle);
                             }else {
                                 Toast.makeText(getActivity(),"Sap ID does not exist",Toast.LENGTH_SHORT).show();
                             }

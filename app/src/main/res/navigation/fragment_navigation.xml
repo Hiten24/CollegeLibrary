@@ -13,24 +13,21 @@
             android:id="@+id/action_fragmentLogin_to_fragmentForgotPassDetail"
             app:destination="@id/fragmentForgotPassDetail" />
         <action
-            android:id="@+id/action_fragmentLogin_to_emailVerificationWhileSignin"
-            app:destination="@id/emailVerificationWhileSignin" />
+            android:id="@+id/action_fragmentLogin_to_fragmentEmailVerificationPage"
+            app:destination="@id/fragmentEmailVerificationPage" />
     </fragment>
     <fragment
         android:id="@+id/fragmentForgotPassDetail"
         android:name="com.example.onlinecollegelibrary.FragmentForgotPassDetail"
         android:label="FragmentForgotPassDetail" >
         <action
-            android:id="@+id/action_fragmentForgotPassDetail_to_fragmentForgotPassOption"
-            app:destination="@id/fragmentForgotPassOption" />
+            android:id="@+id/action_fragmentForgotPassDetail_to_fragmentForgotPassotpVerification2"
+            app:destination="@id/fragmentForgotPassotpVerification2" />
     </fragment>
     <fragment
         android:id="@+id/fragmentForgotPassOption"
         android:name="com.example.onlinecollegelibrary.FragmentForgotPassOption"
         android:label="FragmentForgotPassOption" >
-        <action
-            android:id="@+id/action_fragmentForgotPassOption_to_fragmentEmailVerificationPage"
-            app:destination="@id/fragmentEmailVerificationPage" />
         <action
             android:id="@+id/action_fragmentForgotPassOption_to_fragmentForgotPassotpVerification2"
             app:destination="@id/fragmentForgotPassotpVerification2" />
@@ -52,14 +49,6 @@
             app:destination="@id/fragmentLogin" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentEmailVerificationPage"
-        android:name="com.example.onlinecollegelibrary.FragmentEmailVerificationPage"
-        android:label="FragmentEmailVerificationPage" >
-        <action
-            android:id="@+id/action_fragmentEmailVerificationPage_to_fragmentNewPassword"
-            app:destination="@id/fragmentNewPassword" />
-    </fragment>
-    <fragment
         android:id="@+id/fragmentForgotPassotpVerification2"
         android:name="com.example.onlinecollegelibrary.FragmentForgotPassotpVerification"
         android:label="FragmentForgotPassotpVerification" >
@@ -68,8 +57,11 @@
             app:destination="@id/fragmentNewPassword" />
     </fragment>
     <fragment
-        android:id="@+id/emailVerificationWhileSignin"
-        android:name="com.example.onlinecollegelibrary.EmailVerificationWhileSignin"
-        android:label="fragment_email_verification_while_signin"
-        tools:layout="@layout/fragment_email_verification_while_signin" />
+        android:id="@+id/fragmentEmailVerificationPage"
+        android:name="com.example.onlinecollegelibrary.FragmentEmailVerificationPage"
+        android:label="FragmentEmailVerificationPage" >
+        <action
+            android:id="@+id/action_fragmentEmailVerificationPage_to_fragmentNewPassword"
+            app:destination="@id/fragmentNewPassword" />
+    </fragment>
 </navigation>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/confirm_requested_book"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483">
+
+        <TextView
+            android:id="@+id/request_book_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/request_book_main_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Requested "
+            android:textColor="#1c1c1c"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/request_book_user_name"
+            app:layout_constraintStart_toEndOf="@+id/request_book_user_name"
+            app:layout_constraintTop_toTopOf="@+id/request_book_user_name" />
+
+        <TextView
+            android:id="@+id/request_book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Book Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/request_book_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/request_book_user_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<TextView
+        android:id="@+id/confirm_requested_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_request_book_confirm_btn_bg_xd"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingLeft="5dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:paddingRight="5dp"
+        android:text="Confirm"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toStartOf="@+id/book_requested_cancel"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />-->
+
+    <ImageView
+        android:id="@+id/book_requested_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/request_book_confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/request_book_confirm_button"
+        app:srcCompat="@drawable/book_requested_cancel" />
+
+    <ImageView
+        android:id="@+id/request_book_confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/book_requested_cancel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_request_book_confirm_btn_bg_xd" />
+
+    <TextView
+        android:id="@+id/confirm_requested_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="3dp"
+        android:text="Confirm"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/request_book_confirm_button"
+        app:layout_constraintEnd_toEndOf="@+id/request_book_confirm_button"
+        app:layout_constraintStart_toStartOf="@+id/request_book_confirm_button"
+        app:layout_constraintTop_toTopOf="@+id/request_book_confirm_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

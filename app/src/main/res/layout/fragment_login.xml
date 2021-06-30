@@ -27,20 +27,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password"
         style="@style/editTextLayout"
-        app:passwordToggleEnabled="true"
+        android:layout_marginTop="8dp"
         android:hint="Password"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_sapid">
+        app:layout_constraintTop_toBottomOf="@id/login_sapid"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/editTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:inputType="textPassword"
-            />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -58,12 +57,11 @@
     <Button
         android:id="@+id/loginBtn"
         style="@style/button"
+        android:layout_marginBottom="8dp"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotpass"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/libraryArt"

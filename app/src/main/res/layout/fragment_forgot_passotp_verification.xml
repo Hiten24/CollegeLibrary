@@ -5,37 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/didntGetOTP1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif"
-        android:text="Didn't receive the OTP?"
-        android:textColor="#323131"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otpEditText" />
-
-    <TextView
-        android:id="@+id/didntGetOTP2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:fontFamily="sans-serif"
-        android:text="Resend OTP"
-        android:textColor="#AE0000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toEndOf="@+id/didntGetOTP1"
-        app:layout_constraintTop_toBottomOf="@+id/otpEditText"
-        tools:ignore="MissingConstraints" />
-
     <!--    <com.chaos.view.PinView-->
     <!--        android:layout_width="wrap_content"-->
     <!--        android:layout_height="wrap_content"-->
@@ -149,6 +118,39 @@
     </LinearLayout>-->
 
     <TextView
+        android:id="@+id/didntGetOTP1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="248dp"
+        android:fontFamily="sans-serif"
+        android:text="Didn't receive the OTP?"
+        android:textColor="#323131"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
+        app:layout_constraintEnd_toStartOf="@+id/didntGetOTP2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpEditText" />
+
+    <TextView
+        android:id="@+id/didntGetOTP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="sans-serif"
+        android:text="Resend OTP"
+        android:textColor="#AE0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/didntGetOTP1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/didntGetOTP1"
+        app:layout_constraintTop_toTopOf="@+id/didntGetOTP1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/verification_discription3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -167,38 +169,40 @@
         android:id="@+id/otpEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="@font/muli_black"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginRight="120dp"
+        android:fontFamily="@font/arbutus_slab"
         android:gravity="center"
         android:inputType="number"
+        android:lineSpacingExtra="8sp"
+        android:maxLength="6"
+        android:textAlignment="center"
         android:textColor="#474af1"
         android:textSize="36sp"
-        android:maxLength="6"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verification_discription3"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintTop_toBottomOf="@+id/verification_discription3" />
 
     <Button
-        style="@style/button"
         android:id="@+id/verifyBtn"
+        style="@style/button"
+        android:layout_marginBottom="8dp"
         android:onClick="gotoNewPass"
         android:text="Verify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/didntGetOTP1"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/verifyicon" />

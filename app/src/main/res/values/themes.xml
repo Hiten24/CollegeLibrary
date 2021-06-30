@@ -135,4 +135,36 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="user_profile_details">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/title_color</item>
+        <item name="fontFamily">@font/muli</item>
+    </style>
+
+    <style name="CategotyTab" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/black</item>
+        <item name="tabSelectedTextColor">@android:color/black</item>
+        <item name="tabTextAppearance">@style/CategotyTabTextAppearence</item>
+    </style>
+
+    <style name="CategotyTabTextAppearence" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="admin_dashboard_cardview">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="admin_dashboard_title">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
 </resources>

@@ -1,64 +1,101 @@
 package com.example.onlinecollegelibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UserProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class UserProfileFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    TextView name,sapId,mobileNo,email,studentClass,division,address,profileUsername,profileSapid;
+    Button changePasswordBtn,logOut;
 
     public UserProfileFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static UserProfileFragment newInstance(String param1, String param2) {
-        UserProfileFragment fragment = new UserProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_user_profile, container, false);
+//        String sapID = getActivity().getIntent().getExtras().getString("sapId");
+//        Toast.makeText(getContext(),sapID,Toast.LENGTH_SHORT).show();
+
+        name = view.findViewById(R.id.profile_user_name);
+        sapId = view.findViewById(R.id.profile_sapid);
+        mobileNo = view.findViewById(R.id.profile_phone);
+        email = view.findViewById(R.id.profile_email);
+        studentClass = view.findViewById(R.id.profile_class_and_div);
+        address = view.findViewById(R.id.profile_address);
+        logOut = view.findViewById(R.id.user_profile_log_out_btn);
+
+        profileUsername = view.findViewById(R.id.ProfileUserName);
+        profileSapid = view.findViewById(R.id.ProfileUsersap);
+        changePasswordBtn = view.findViewById(R.id.change_password_button);
+
+        String sapID = "53003180070";
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                getActivity().finish();
+                startActivity(intent);
+            }
+        });
+
+        changePasswordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String sapId = new SessionManager(getContext()).getSapId();
+                Toast.makeText(getContext(),sapId,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        new DatabaseHelper(getContext()).getUserDetails(sapID, new DatabaseCallback() {
+            @Override
+            public void onDataReceived(User user) {
+                updateUi(user);
+            }
+        });
+
+//        getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+//        getActivity().getWindow().setStatusBarColor(this.getResources().getColor(R.color.purple_200));
+
+        return view;
     }
+
+    private void updateUi(User u){
+        String classAndDiv = u.getStudentClass()+" - "+u.getDiv();
+        profileUsername.setText(u.getName());
+        profileSapid.setText(u.getSapId());
+        name.setText(u.getName());
+        sapId.setText(u.getSapId());
+        mobileNo.setText(u.getMobNo());
+        email.setText(u.getEmail());
+        studentClass.setText(classAndDiv);
+        address.setText(u.getAddress());
+    }
+
 }

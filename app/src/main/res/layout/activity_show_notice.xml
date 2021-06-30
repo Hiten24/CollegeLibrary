@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowNotice">
+
+    <TextView
+        android:id="@+id/notice_title_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/muli_black"
+        android:text="B.Sc.It Semester V Marksheet (December - 2020)"
+        android:textColor="@color/title_color"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_notice_back_button" />
+
+    <TextView
+        android:id="@+id/notice_date_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/muli"
+        android:text="March 21, 2021"
+        android:textColor="#676565"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/notice_title_value"
+        app:layout_constraintTop_toBottomOf="@+id/notice_title_value" />
+
+    <TextView
+        android:id="@+id/notice_body_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/muli"
+        android:lineSpacingExtra="2dp"
+        android:text="The Gradsheets of the class B.sc.It have been received by us from University of Mumbai. The students are intstructed to collect their grade-sheet on production of their hall tickets from 9th March,2021"
+        android:textColor="#393838"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/notice_title_value"
+        app:layout_constraintStart_toStartOf="@+id/notice_title_value"
+        app:layout_constraintTop_toBottomOf="@+id/notice_date_value" />
+
+    <ImageView
+        android:id="@+id/show_notice_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@drawable/book_info_bg"
+        android:padding="15dp"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right_arrow" />
+
+    <ImageView
+        android:id="@+id/notice_edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/book_info_bg"
+        android:padding="15dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/show_notice_back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/show_notice_back_button"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/edit_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

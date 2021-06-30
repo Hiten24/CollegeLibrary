@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ public class FragmentEmailVerificationPage extends Fragment {
     FirebaseAuth mAuth;
     Button emailVerifiedBtn;
     String emailID;
+    ImageView verifiedIcon;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -62,11 +64,15 @@ public class FragmentEmailVerificationPage extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         emailID = getArguments().getString("EmailID");
         emailVerifiedBtn = view.findViewById(R.id.reset_pass_mail_sent_verifiedMail);
+        verifiedIcon = view.findViewById(R.id.verified_logo);
         emailVerifiedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mAuth.getCurrentUser().isEmailVerified()){
-                    Navigation.findNavController(view).navigate(R.id.action_fragmentEmailVerificationPage_to_fragmentNewPassword);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("SapId",new SessionManager(getContext()).getSapId());
+                    bundle.putBoolean("isForgot",false);
+                    Navigation.findNavController(view).navigate(R.id.action_fragmentEmailVerificationPage_to_fragmentNewPassword,bundle);
                 }
                 else {
                     Toast.makeText(getActivity(),"Please verify your email id",Toast.LENGTH_SHORT).show();
@@ -74,11 +80,16 @@ public class FragmentEmailVerificationPage extends Fragment {
             }
         });
         sendEmailVerification();
-
+        isUserVerified();
         return view;
     }
+    private void isUserVerified(){
+        if(FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
+            verifiedIcon.setVisibility(View.VISIBLE);
+        }
+    }
     private void sendEmailVerification(){
-        mAuth.getCurrentUser().sendEmailVerification()
+        FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

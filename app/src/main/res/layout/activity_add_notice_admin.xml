@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNoticeAdmin">
+
+    <TextView
+        android:id="@+id/notice_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/muli"
+        android:text="Notice Title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/muli"
+        android:text="Content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notice_title_view" />
+
+    <EditText
+        android:id="@+id/notice_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:background="@drawable/barcode_field_box"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notice_title" />
+
+    <EditText
+        android:id="@+id/notice_body_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/barcode_field_box"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/bold_syle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/bold_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/notice_body_view"
+        app:layout_constraintTop_toBottomOf="@+id/notice_body_view" />
+
+    <ImageButton
+        android:id="@+id/italic_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/italic_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/bold_syle"
+        app:layout_constraintStart_toEndOf="@+id/bold_syle"
+        app:layout_constraintTop_toTopOf="@+id/bold_syle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/underline_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/underline_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/italic_style"
+        app:layout_constraintStart_toEndOf="@+id/italic_style"
+        app:layout_constraintTop_toTopOf="@+id/italic_style"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/format_clear_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/format_clear_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/italic_style"
+        app:layout_constraintStart_toEndOf="@+id/underline_style"
+        app:layout_constraintTop_toTopOf="@+id/italic_style"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/attach_file_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/attach_file_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/italic_style"
+        app:layout_constraintStart_toEndOf="@+id/format_clear_style"
+        app:layout_constraintTop_toTopOf="@+id/italic_style"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/add_notice_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/notice_body_view"
+        app:layout_constraintTop_toBottomOf="@+id/notice_body_view" />
+
+    <!--<ImageButton
+        android:id="@+id/format_size_increase"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_round_keyboard_arrow_up_24"
+        app:layout_constraintEnd_toStartOf="@+id/format_size_decrease"
+        tools:layout_editor_absoluteY="697dp" />
+
+    <ImageButton
+        android:id="@+id/format_size_decrease"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="#EDE9E9"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_outline_keyboard_arrow_down_24"
+        app:layout_constraintBottom_toBottomOf="@+id/format_size_increase"
+        app:layout_constraintEnd_toEndOf="@+id/notice_body_view"
+        app:layout_constraintTop_toTopOf="@+id/format_size_increase" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
